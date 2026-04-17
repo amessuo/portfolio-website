@@ -1,0 +1,237 @@
+.section {
+  padding: var(--space-2xl) 0 var(--space-3xl);
+  background-color: var(--warm-cream);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr 1.3fr;
+    gap: var(--space-2xl);
+  }
+}
+
+/* Left text side */
+.textSide {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.overline {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+}
+
+.heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  color: var(--black);
+}
+
+.headingSub {
+  color: var(--mid-gray);
+}
+
+.textDesc {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--charcoal);
+  max-width: 380px;
+}
+
+.viewAll {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--black);
+  padding: 0.625rem 1.25rem;
+  border: 1px solid var(--black);
+  border-radius: var(--radius-md);
+  align-self: flex-start;
+  margin-top: var(--space-xs);
+  transition: background-color var(--duration-fast) ease;
+}
+
+.viewAll:hover {
+  background-color: var(--mint);
+}
+
+/* Carousel card */
+.carouselSide {
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.card {
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Card header row — client name + year */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardLabel {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+}
+
+.cardYear {
+  font-size: 0.75rem;
+  color: var(--mid-gray);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--black);
+}
+
+/* Results inset block — pastel like the service highlight */
+.resultsBlock {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding: var(--space-sm);
+  background-color: var(--pale-teal);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.resultItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.125rem;
+}
+
+.resultValue {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 1.2;
+}
+
+.resultMetric {
+  font-size: 0.6875rem;
+  color: var(--mid-gray);
+  line-height: 1.3;
+}
+
+/* Tags */
+.cardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.cardTag {
+  display: inline-block;
+  padding: 0.2rem 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  background-color: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+  letter-spacing: 0.02em;
+}
+
+/* CTA — mint, consistent with services */
+.cardCta {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  background-color: var(--mint);
+  color: var(--black);
+  border: 1px solid var(--black);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-xs);
+  transition: background-color var(--duration-fast) ease;
+}
+
+.cardCta:hover {
+  background-color: #8DE8A0;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: var(--white);
+  color: var(--black);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.navBtn:hover {
+  background-color: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
+
+.dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) ease, transform var(--duration-fast) ease;
+}
+
+.dotActive {
+  background-color: var(--black);
+  transform: scale(1.2);
+}

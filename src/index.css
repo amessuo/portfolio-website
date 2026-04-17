@@ -1,0 +1,31 @@
+@import './styles/reset.css';
+@import './styles/variables.css';
+@import './styles/typography.css';
+
+#root {
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+::selection {
+  background-color: var(--mint);
+  color: var(--black);
+}

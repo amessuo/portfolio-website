@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.DS_Store
+
+# Local docs (not part of the codebase)
+*.pdf
+Marketix_Brand_Guideline.md
+ThreeDigital_Brand_Guideline.md
+"Three Digital Favicon .png"
+"Three Digital Logo.png"

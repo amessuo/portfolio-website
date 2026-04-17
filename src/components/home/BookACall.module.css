@@ -1,0 +1,141 @@
+.section {
+  padding: var(--space-2xl) 0 var(--space-3xl);
+  background-color: var(--soft-yellow);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-2xl);
+  }
+}
+
+.textSide {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.overline {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+}
+
+.heading {
+  color: var(--black);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+}
+
+.description {
+  color: var(--charcoal);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: var(--space-xs);
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--black);
+  transition: color var(--duration-fast) ease;
+}
+
+.contactLink:hover {
+  color: var(--charcoal);
+}
+
+.contactIcon {
+  flex-shrink: 0;
+  color: var(--mid-gray);
+}
+
+/* Calendar embed area */
+.calendarSide {
+  width: 100%;
+}
+
+.calendarEmbed {
+  width: 100%;
+  min-width: 320px;
+  height: 680px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: var(--white);
+}
+
+.calendarPlaceholder {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendarBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  gap: var(--space-sm);
+}
+
+.calendarIcon {
+  color: var(--mid-gray);
+}
+
+.calendarLabel {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.calendarNote {
+  font-size: 0.8125rem;
+  color: var(--mid-gray);
+  text-align: center;
+  max-width: 280px;
+}
+
+.calendarLink {
+  display: inline-block;
+  margin-top: var(--space-xs);
+  padding: 0.75rem 1.75rem;
+  background-color: var(--mint);
+  color: var(--black);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border: 1px solid var(--black);
+  border-radius: var(--radius-md);
+  transition: background-color var(--duration-fast) ease;
+}
+
+.calendarLink:hover {
+  background-color: #8DE8A0;
+}
