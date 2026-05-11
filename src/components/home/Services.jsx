@@ -30,9 +30,9 @@ const services = [
         role: 'Marketing Director, HealthPlus',
       },
       {
-        quote: 'Domain rating jumped from 4 to 29 — we went from invisible to ranking on page one for our most competitive keywords.',
+        quote: 'Domain rating jumped from 4 to 29. We went from invisible to ranking on page one for our most competitive keywords.',
         name: 'Dr. Alex Reed',
-        role: 'Founder, London Scar Clinic',
+        role: 'Founder, Scar Removal Clinic',
       },
     ],
     results: [
@@ -45,7 +45,7 @@ const services = [
   {
     num: '02',
     title: 'Marketing Strategy',
-    description: 'Data-driven marketing plans tailored to your business goals, audience, and competitive landscape — from research to execution.',
+    description: 'Data-driven marketing plans tailored to your business goals, audience, and competitive landscape, from research to execution.',
     highlight: '+30.57%',
     highlightLabel: 'avg. conversion increase',
     highlightSub: 'Across paid & organic channels',
@@ -113,7 +113,7 @@ const services = [
     tags: ['AI', 'Automation', 'Scale'],
     featured: false,
     fullDescription:
-      'I work with marketing teams who are done experimenting with AI and ready to actually deploy it. I start with an audit of your current workflows, find the highest-leverage places to plug in AI, then build and install the systems myself. Every engagement ends with your team trained and owning the tools — not dependent on me to run them.',
+      'I work with marketing teams who are done experimenting with AI and ready to actually deploy it. I start with an audit of your current workflows, find the highest-leverage places to plug in AI, then build and install the systems myself. Every engagement ends with your team trained and owning the tools, not dependent on me to run them.',
     whatYouGet: [
       {
         title: 'AI Content Pipeline',
@@ -121,11 +121,11 @@ const services = [
       },
       {
         title: 'GSC Intelligence Agent',
-        description: 'A custom agent that surfaces SEO opportunities, tracks AI Overview cannibalization, and flags ranking drops — without anyone touching Search Console manually.',
+        description: 'A custom agent that surfaces SEO opportunities, tracks AI Overview cannibalization, and flags ranking drops, without anyone touching Search Console manually.',
       },
       {
         title: 'AI Visibility & GEO Audit',
-        description: 'Find out where your brand appears (and doesn\'t) in AI-generated answers across ChatGPT, Perplexity, and Google AI Mode — and fix it.',
+        description: 'Find out where your brand appears (and doesn\'t) in AI-generated answers across ChatGPT, Perplexity, and Google AI Mode, and fix it.',
       },
       {
         title: 'Cold Outreach System',
@@ -138,14 +138,9 @@ const services = [
     ],
     testimonials: [
       {
-        quote: 'I came in skeptical. Six weeks later we had a content pipeline producing 10x our previous output, and my team runs it without me. That\'s rare.',
-        name: 'Jordan Miles',
-        role: 'Head of Marketing, Arcflow',
-      },
-      {
-        quote: 'Oussama doesn\'t consult — he builds. He installed a GSC agent that now catches ranking issues before I even open Search Console. That alone was worth it.',
-        name: 'Sara Chen',
-        role: 'Marketing Manager, Stacklane',
+        quote: 'Oussama thinks like a marketer, not a developer. He taught me to build a website with AI tools in a couple of sessions. No jargon, just clear steps. What would have taken me weeks, he made feel effortless.',
+        name: 'Maya Pasek',
+        role: 'Head of Content, B2B Content Strategist',
       },
     ],
     results: [

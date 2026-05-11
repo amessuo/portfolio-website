@@ -144,3 +144,17 @@
 .card:hover .arrow {
   transform: translateX(4px);
 }
+
+@media (max-width: 640px) {
+  .content {
+    padding: var(--space-sm) var(--space-md) var(--space-md);
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .summary {
+    font-size: 0.85rem;
+  }
+}

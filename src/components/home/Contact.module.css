@@ -74,3 +74,20 @@
 .cta:hover {
   background-color: var(--forest-green-dark);
 }
+
+@media (max-width: 640px) {
+  .contact {
+    padding: var(--space-2xl) 0;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .cta {
+    padding: 0.85rem 2rem;
+    width: 100%;
+    text-align: center;
+  }
+}

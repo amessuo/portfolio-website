@@ -18,9 +18,6 @@ export default function Contact() {
           </p>
 
           <div className={styles.links}>
-            <a href="mailto:hello@threedigital.com" className={styles.emailLink}>
-              hello@threedigital.com
-            </a>
             <a
               href="https://linkedin.com"
               target="_blank"

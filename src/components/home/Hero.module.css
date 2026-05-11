@@ -1,8 +1,5 @@
+/* ─── Hero Section ─── */
 .hero {
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   padding-top: var(--nav-height);
   padding-bottom: var(--space-xl);
@@ -11,37 +8,267 @@
 }
 
 .inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: var(--space-lg);
-  padding-block: var(--space-2xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+  padding-block: var(--space-2xl) var(--space-xl);
 }
 
-.headline {
-  max-width: 800px;
-  color: var(--black);
-  font-size: clamp(2.25rem, 4.5vw + 0.5rem, 3.75rem);
+/* ─── Left Column ─── */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-top: var(--space-sm);
+}
+
+/* Availability badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--black);
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
   font-weight: 600;
-  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--black);
+  flex-shrink: 0;
+}
+
+/* Headline */
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 5vw + 0.5rem, 4.25rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--black);
+  margin-top: var(--space-sm);
+}
+
+.accent {
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+  color: var(--black);
+  isolation: isolate;
+}
+
+.accent::after {
+  content: '';
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: 0.08em;
+  height: 0.25em;
+  background-color: var(--mint);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* Subtitle / description */
+.sub {
+  max-width: 520px;
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1vw + 0.25rem, 1.1rem);
+  line-height: 1.65;
+  color: var(--charcoal);
+  margin-top: var(--space-xs);
+}
+
+/* CTA row */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
 }
 
 .cta {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
   background-color: var(--mint);
   color: var(--black);
   font-family: var(--font-body);
   font-size: 0.9375rem;
-  font-weight: 500;
-  border: 1px solid var(--black);
+  font-weight: 600;
+  border: none;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: background-color var(--duration-fast) ease, transform var(--duration-fast) ease;
+  transition:
+    background-color var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
 }
 
 .cta:hover {
   background-color: #8DE8A0;
   transform: translateY(-1px);
+}
+
+.ctaArrow {
+  font-size: 1.1rem;
+  transition: transform var(--duration-fast) ease;
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(3px);
+}
+
+.ctaNote {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--charcoal);
+}
+
+.ctaNote strong {
+  font-weight: 700;
+}
+
+
+/* ─── Right Column — Stat Card ─── */
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.statCard {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+}
+
+.statLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: var(--space-xs);
+}
+
+.statDash {
+  display: inline-block;
+  width: 24px;
+  height: 1.5px;
+  background-color: var(--mid-gray);
+  flex-shrink: 0;
+}
+
+/* Huge stat number */
+.statNumber {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(5rem, 10vw, 8.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  margin-left: -0.04em;
+}
+
+.statBlack {
+  color: var(--black);
+}
+
+.statFaded {
+  color: var(--lavender);
+}
+
+.statPercent {
+  color: var(--lavender);
+  font-size: 0.45em;
+  vertical-align: super;
+  margin-left: -0.05em;
+}
+
+/* Meta info blocks */
+.statMeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.statMetaLabel {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 0.4rem;
+}
+
+.statMetaText {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--charcoal);
+}
+
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .right {
+    justify-content: flex-start;
+  }
+
+  .statCard {
+    max-width: 100%;
+  }
+
+  .statNumber {
+    font-size: clamp(4.5rem, 10vw, 8rem);
+  }
+
+}
+
+@media (max-width: 640px) {
+  .headline {
+    font-size: clamp(2.25rem, 8vw, 3.25rem);
+  }
+
+  .ctaRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .recentRow {
+    flex-wrap: wrap;
+  }
+
+  .statMeta {
+    grid-template-columns: 1fr;
+  }
+
+  .statNumber {
+    font-size: clamp(3.5rem, 15vw, 6rem);
+  }
 }

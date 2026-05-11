@@ -18,8 +18,7 @@ export default function CaseStudyCarousel() {
         <RevealOnScroll variant="fade-left" className={styles.textSide}>
           <span className={styles.overline}>Case Studies</span>
           <h2 className={styles.heading}>
-            Bring in more leads<br />
-            <span className={styles.headingSub}>&rarr; Don't take our word for it</span>
+            Bring in more leads
           </h2>
           <p className={styles.textDesc}>
             Real results from real clients. Browse our case studies to see how we've helped businesses grow their organic presence and generate more leads.

@@ -23,7 +23,7 @@ export default function About() {
             campaigns that cut through the noise and deliver measurable results.
           </p>
           <p>
-            Our approach is rooted in understanding people — what motivates them, what
+            Our approach is rooted in understanding people: what motivates them, what
             resonates with them, and what moves them to act. Every strategy we build
             starts with empathy and ends with impact.
           </p>

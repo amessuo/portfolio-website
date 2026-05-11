@@ -6,10 +6,12 @@ import PageTransition from './components/layout/PageTransition'
 import HomePage from './pages/HomePage'
 import CaseStudiesPage from './pages/CaseStudiesPage'
 import CaseStudyDetail from './pages/CaseStudyDetail'
+import useCanonical from './hooks/useCanonical'
 import './App.css'
 
 function AnimatedRoutes() {
   const location = useLocation()
+  useCanonical()
 
   return (
     <AnimatePresence mode="wait">

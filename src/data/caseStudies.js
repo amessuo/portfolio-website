@@ -1,10 +1,10 @@
 const caseStudies = [
   {
     id: 1,
-    slug: 'daniel-ezra',
-    title: 'Growing Daniel Ezra\'s Online Presence',
-    client: 'Daniel Ezra',
-    website: 'danielezra.co.uk',
+    slug: 'cosmetic-surgery-clinic',
+    title: 'Growing a Cosmetic Surgery Clinic\'s Online Presence',
+    client: 'Cosmetic Surgery Clinic',
+    website: '',
     year: '2022–2024',
     period: 'October 2022 to April 2024',
     tags: ['SEO', 'PPC', 'Content Marketing', 'Link Building'],
@@ -17,11 +17,11 @@ const caseStudies = [
     summary:
       'Delivered a comprehensive SEO and PPC strategy for a leading aesthetics clinic, achieving a 23.45% increase in leads and 30.57% more PPC conversions through treatment page optimisation, strategic content marketing, and targeted link building.',
     challenge:
-      'Daniel Ezra, a prominent aesthetics and cosmetic clinic, needed to improve their organic search visibility and lead generation. Their treatment pages weren\'t optimised for search intent, internal linking was weak, and they lacked a content strategy to support their core service pages. On the paid side, there was room to improve conversion rates and reduce cost per lead.',
+      'A prominent aesthetics and cosmetic surgery clinic needed to improve their organic search visibility and lead generation. Their treatment pages weren\'t optimised for search intent, internal linking was weak, and they lacked a content strategy to support their core service pages. On the paid side, there was room to improve conversion rates and reduce cost per lead.',
     approach: [
       'Optimised all treatment pages for both SEO performance and conversion rate, ensuring content aligned with search intent and encouraged enquiries.',
       'Rebuilt the internal link strategy to create clear pathways between related treatments, blogs, and pillar pages.',
-      'Identified pillar pages — the most important core business pages — and built a content ecosystem around them with targeted blog posts going after achievable keywords.',
+      'Identified pillar pages (the most important core business pages) and built a content ecosystem around them with targeted blog posts going after achievable keywords.',
       'Executed a sustained link building campaign directed at treatment pillar pages to build domain authority, growing DR from 29 to 37.',
       'Ran and optimised PPC campaigns in parallel, focusing on high-intent treatment keywords to capture ready-to-convert traffic.',
     ],
@@ -42,7 +42,7 @@ const caseStudies = [
     keyInsights: [
       'The increase in clicks started in January after finishing treatment page optimisation and improving internal link mappings.',
       'Blog content targeting easy keywords around key treatments became a consistent source of both traffic and internal link equity.',
-      'The combination of SEO and PPC created a compounding effect — organic improvements reduced reliance on paid while PPC captured high-intent traffic immediately.',
+      'The combination of SEO and PPC created a compounding effect: organic improvements reduced reliance on paid while PPC captured high-intent traffic immediately.',
     ],
     testimonial: null,
     chartData: [
@@ -61,10 +61,10 @@ const caseStudies = [
   },
   {
     id: 2,
-    slug: 'london-scar-clinic',
-    title: 'Doubling Traffic & Leads for London Scar Clinic',
-    client: 'The London Scar Clinic',
-    website: 'thelondonscarclinic.com',
+    slug: 'scar-removal-clinic',
+    title: 'Doubling Traffic & Leads for a Scar Removal Clinic',
+    client: 'Scar Removal Clinic',
+    website: '',
     year: '2022–2024',
     period: 'October 2022 to April 2024',
     tags: ['SEO', 'PPC', 'Content Marketing', 'Link Building'],
@@ -77,12 +77,12 @@ const caseStudies = [
     summary:
       'Transformed a specialist medical clinic\'s digital presence with a full SEO and PPC strategy, doubling both users and leads, growing domain rating from 4 to 29, and achieving a 92.91% increase in monthly organic visitors.',
     challenge:
-      'The London Scar Clinic is a specialist medical practice focused on scar treatment. Despite offering highly specialised services, their online visibility was almost non-existent — a domain rating of just 4, minimal organic traffic, and treatment pages that weren\'t ranking for relevant search terms. They needed a complete digital strategy to compete in a medical niche where trust and authority are everything.',
+      'A specialist medical practice focused on scar treatment needed to build their online presence. Despite offering highly specialised services, their online visibility was almost non-existent: a domain rating of just 4, minimal organic traffic, and treatment pages that weren\'t ranking for relevant search terms. They needed a complete digital strategy to compete in a medical niche where trust and authority are everything.',
     approach: [
       'Optimised all treatment pages for SEO and conversions, restructuring content to match how patients actually search for scar treatments and building trust signals throughout.',
       'Built a strategic internal linking architecture connecting treatment pages, condition pages, and supporting blog content into a cohesive pillar page structure.',
       'Identified and created pillar pages for core treatments, then produced targeted blog content around each pillar to capture long-tail keywords and funnel link equity.',
-      'Executed an aggressive link building campaign to build domain authority from scratch, growing DR from 4 to 29 — a 25-point increase.',
+      'Executed an aggressive link building campaign to build domain authority from scratch, growing DR from 4 to 29, a 25-point increase.',
       'Managed PPC campaigns targeting high-intent medical queries, achieving a cost per lead of just £19.90.',
     ],
     seoResults: [
@@ -100,7 +100,7 @@ const caseStudies = [
       { metric: 'Domain Rating', value: '4→29', numericValue: 29, suffix: '', description: '+25 points built from near-zero' },
     ],
     keyInsights: [
-      'Despite a decrease in impressions, clicks increased significantly — a sign that improved rankings and page optimisation were attracting more qualified, intent-driven traffic.',
+      'Despite a decrease in impressions, clicks increased significantly, a sign that improved rankings and page optimisation were attracting more qualified, intent-driven traffic.',
       'The increase in CTR confirmed that treatment pages were better adapted to search results and user intent after optimisation.',
       'The breakthrough started in March when treatment page optimisation, internal link improvements, and blog publishing all converged.',
     ],
@@ -135,7 +135,7 @@ const caseStudies = [
     ctaLabel: 'Explore',
     layout: 'grid',
     summary:
-      'Executed a focused link building strategy that grew domain rating by 9 points (now 35), nearly doubled organic traffic, and delivered a staggering 2,512.5% increase in leads — all within 8 months.',
+      'Executed a focused link building strategy that grew domain rating by 9 points (now 35), nearly doubled organic traffic, and delivered a staggering 2,512.5% increase in leads, all within 8 months.',
     challenge:
       'Waltero had a relatively new domain with a low domain rating of 21 and limited organic visibility. With only 648 average monthly organic visitors, they weren\'t generating meaningful inbound leads. They needed a targeted link building strategy to build authority and unlock organic growth.',
     approach: [
@@ -150,7 +150,7 @@ const caseStudies = [
       { metric: 'Domain Rating', value: '21→35', numericValue: 35, suffix: '', description: '+14 points (currently 35)' },
     ],
     keyInsights: [
-      'The domain rating jump was followed by a significant traffic boom — confirming the correlation between authority building and organic visibility.',
+      'The domain rating jump was followed by a significant traffic boom, confirming the correlation between authority building and organic visibility.',
       '54 carefully placed links over 8 months delivered an outsized impact, proving that quality and relevance matter more than volume.',
       'The 2,512.5% lead increase demonstrates how link building can unlock exponential growth when the foundational content is in place.',
     ],
@@ -184,7 +184,7 @@ const caseStudies = [
     ctaLabel: 'Explore',
     layout: 'featured-bottom',
     summary:
-      'Achieved one of the fastest domain authority climbs in our portfolio — taking Truffle from DR 4 to 36 in just 4 months, with 47 links built and a 44.7% increase in organic traffic.',
+      'Achieved one of the fastest domain authority climbs in our portfolio, taking Truffle from DR 4 to 36 in just 4 months, with 47 links built and a 44.7% increase in organic traffic.',
     challenge:
       'Truffle\'s hiring platform had a brand new domain with a domain rating of just 4. With only 476 average monthly organic visitors, they were virtually invisible in search results. They needed rapid authority building to compete with established players in the recruitment technology space.',
     approach: [
@@ -199,7 +199,7 @@ const caseStudies = [
       { metric: 'Links Built', value: '47', numericValue: 47, suffix: '', description: 'High-quality backlinks in 4 months' },
     ],
     keyInsights: [
-      'A 32-point domain rating increase in 4 months is exceptional — achieved through consistent, high-quality link acquisition rather than volume.',
+      'A 32-point domain rating increase in 4 months is exceptional, achieved through consistent, high-quality link acquisition rather than volume.',
       'The DR jump created a foundation for continued organic growth, with the traffic boom following the authority increase pattern.',
       'Starting from DR 4, the initial links had an outsized impact on authority, demonstrating the importance of early link building investment.',
     ],

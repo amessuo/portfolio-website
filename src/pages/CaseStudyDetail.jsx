@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import RevealOnScroll from '../components/shared/RevealOnScroll'
+import BookACall from '../components/home/BookACall'
 import caseStudies from '../data/caseStudies'
 import styles from './CaseStudyDetail.module.css'
 
@@ -260,51 +261,27 @@ export default function CaseStudyDetail() {
         </div>
       </section>
 
-      {/* Client Testimonial */}
-      <section className={styles.testimonialSection}>
-        <div className="container">
-          <RevealOnScroll>
-            <div className={styles.testimonialCard}>
-              <span className={styles.overline}>Client Testimonial</span>
-              {study.testimonial ? (
-                <>
-                  <blockquote className={styles.testimonialQuote}>
-                    "{study.testimonial.quote}"
-                  </blockquote>
-                  <div className={styles.testimonialAuthor}>
-                    <span className={styles.testimonialName}>{study.testimonial.author}</span>
-                    <span className={styles.testimonialRole}>{study.testimonial.role}</span>
-                  </div>
-                </>
-              ) : (
-                <p className={styles.testimonialPlaceholder}>
-                  The results speak for themselves — see the numbers above.
-                </p>
-              )}
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
+      {/* Client Testimonial — only render if one exists */}
+      {study.testimonial && (
+        <section className={styles.testimonialSection}>
+          <div className="container">
+            <RevealOnScroll>
+              <div className={styles.testimonialCard}>
+                <span className={styles.overline}>Client Testimonial</span>
+                <blockquote className={styles.testimonialQuote}>
+                  "{study.testimonial.quote}"
+                </blockquote>
+                <div className={styles.testimonialAuthor}>
+                  <span className={styles.testimonialName}>{study.testimonial.author}</span>
+                  <span className={styles.testimonialRole}>{study.testimonial.role}</span>
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </section>
+      )}
 
-      {/* CTA Banner */}
-      <section className={styles.ctaSection}>
-        <div className={`${styles.ctaInner} container`}>
-          <RevealOnScroll>
-            <h2 className={styles.ctaHeading}>Let's build the same for you</h2>
-            <p className={styles.ctaDesc}>
-              Ready to see similar results for your business? Book a free consultation and let's get started.
-            </p>
-            <a
-              href="https://calendly.com/oussema-bettaieb1903/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.ctaButton}
-            >
-              Book Call &rarr;
-            </a>
-          </RevealOnScroll>
-        </div>
-      </section>
+      <BookACall />
     </main>
   )
 }

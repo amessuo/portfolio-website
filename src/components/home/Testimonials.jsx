@@ -3,28 +3,10 @@ import styles from './Testimonials.module.css'
 
 const testimonials = [
   {
-    name: 'Sarah Mitchell',
-    role: 'CEO, TechStart',
+    name: 'Maya Pasek',
+    role: 'Head of Content, B2B Content Strategist',
     image: null,
-    quote: 'ThreeDigital transformed our online presence. Our organic traffic tripled in just 6 months, and we saw a 200% increase in qualified leads.',
-  },
-  {
-    name: 'James Chen',
-    role: 'Founder, Waltero',
-    image: null,
-    quote: 'The link building strategy was game-changing. Our domain rating jumped from 21 to 35 and leads increased by over 2,500%. Incredible results.',
-  },
-  {
-    name: 'Emma Thompson',
-    role: 'Marketing Director, HealthPlus',
-    image: null,
-    quote: 'Working with Oussama was a turning point. He understood our niche market and delivered an SEO strategy that actually moved the needle.',
-  },
-  {
-    name: 'David Park',
-    role: 'Co-founder, Truffle',
-    image: null,
-    quote: 'From DR 4 to 36 in four months — we didn\'t think it was possible. The team\'s expertise in authority building is unmatched.',
+    quote: 'Oussama thinks like a marketer, not a developer. He taught me to build a website with AI tools in a couple of sessions. No jargon, just clear steps. What would have taken me weeks, he made feel effortless.',
   },
 ]
 

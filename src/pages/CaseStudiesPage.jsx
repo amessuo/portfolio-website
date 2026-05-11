@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import caseStudies from '../data/caseStudies'
+import BookACall from '../components/home/BookACall'
 import styles from './CaseStudiesPage.module.css'
 
 function CaseStudyCard({ study, index }) {
@@ -78,6 +79,8 @@ export default function CaseStudiesPage() {
           ))}
         </div>
       </div>
+
+      <BookACall />
     </main>
   )
 }
