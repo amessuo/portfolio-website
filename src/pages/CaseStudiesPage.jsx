@@ -68,7 +68,7 @@ export default function CaseStudiesPage() {
             Choose the project that inspires you
           </h1>
           <p className={styles.subtitle}>
-            Real strategies, real results. Explore how we've helped brands grow
+            Real strategies, real results. Explore how I've helped brands grow
             their organic presence and generate more leads.
           </p>
         </motion.div>

@@ -225,7 +225,7 @@ export default function CaseStudyDetail() {
 
             {study.approach && (
               <>
-                <span className={styles.overline}>Our Approach</span>
+                <span className={styles.overline}>My Approach</span>
                 <ol className={styles.approachList}>
                   {study.approach.map((step, i) => (
                     <li key={i} className={styles.approachItem}>

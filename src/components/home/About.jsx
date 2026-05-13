@@ -13,18 +13,18 @@ export default function About() {
         </RevealOnScroll>
 
         <RevealOnScroll variant="fade-up" className={styles.textCol}>
-          <span className="label">About Us</span>
+          <span className="label">About</span>
           <div className={styles.divider} />
-          <h2 className={styles.heading}>We help brands grow through SEO.</h2>
+          <h2 className={styles.heading}>I help brands grow through SEO.</h2>
           <p>
-            ThreeDigital is a marketing agency with over a decade of experience helping
-            startups and growing businesses find their voice, reach their audience, and
-            grow with purpose. From scrappy startups to scaling enterprises, we've led
-            campaigns that cut through the noise and deliver measurable results.
+            With over a decade of experience helping startups and growing businesses
+            find their voice, reach their audience, and grow with purpose. From scrappy
+            startups to scaling enterprises, I've led campaigns that cut through the
+            noise and deliver measurable results.
           </p>
           <p>
-            Our approach is rooted in understanding people: what motivates them, what
-            resonates with them, and what moves them to act. Every strategy we build
+            My approach is rooted in understanding people: what motivates them, what
+            resonates with them, and what moves them to act. Every strategy I build
             starts with empathy and ends with impact.
           </p>
           <div className={styles.stats}>

@@ -184,7 +184,7 @@ const caseStudies = [
     ctaLabel: 'Explore',
     layout: 'featured-bottom',
     summary:
-      'Achieved one of the fastest domain authority climbs in our portfolio, taking Truffle from DR 4 to 36 in just 4 months, with 47 links built and a 44.7% increase in organic traffic.',
+      'Achieved one of the fastest domain authority climbs in my portfolio, taking Truffle from DR 4 to 36 in just 4 months, with 47 links built and a 44.7% increase in organic traffic.',
     challenge:
       'Truffle\'s hiring platform had a brand new domain with a domain rating of just 4. With only 476 average monthly organic visitors, they were virtually invisible in search results. They needed rapid authority building to compete with established players in the recruitment technology space.',
     approach: [

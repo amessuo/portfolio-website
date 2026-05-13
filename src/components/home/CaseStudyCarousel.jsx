@@ -21,7 +21,7 @@ export default function CaseStudyCarousel() {
             Bring in more leads
           </h2>
           <p className={styles.textDesc}>
-            Real results from real clients. Browse our case studies to see how we've helped businesses grow their organic presence and generate more leads.
+            Real results from real clients. Browse my case studies to see how I've helped businesses grow their organic presence and generate more leads.
           </p>
           <Link to="/case-studies" className={styles.viewAll}>
             View all case studies &rarr;

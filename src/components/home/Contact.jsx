@@ -13,13 +13,13 @@ export default function Contact() {
             Ready to grow<br />your business?
           </h2>
           <p className={styles.description}>
-            Grow your business with us! Contact us today without hesitation.
-            Let's discuss how we can elevate your digital presence together.
+            Ready to grow? Get in touch today.
+            Let's discuss how I can elevate your digital presence.
           </p>
 
           <div className={styles.links}>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/oussamabettaieb/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}

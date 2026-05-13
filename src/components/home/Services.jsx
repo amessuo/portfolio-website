@@ -20,19 +20,14 @@ const services = [
     tags: ['Technical SEO', 'On-Page', 'Link Building'],
     featured: false,
     fullDescriptionParagraphs: [
-      'Your buyers are searching everywhere. Google, ChatGPT, Perplexity, Reddit, YouTube. Most businesses only show up in one or two of these places, if at all. We change that.',
-      'We find where you\'re missing, build the authority and content that puts you in front of buyers across every platform they use to find answers, and make sure that visibility compounds over time. The result: more of the right people finding you, regardless of where they search.',
+      'Your buyers are searching everywhere. Google, ChatGPT, Perplexity, Reddit, YouTube. Most businesses only show up in one or two of these places, if at all. I change that.',
+      'I find where you\'re missing, build the authority and content that puts you in front of buyers across every platform they use to find answers, and make sure that visibility compounds over time. The result: more of the right people finding you, regardless of where they search.',
     ],
     testimonials: [
       {
-        quote: 'Our organic traffic doubled in 6 months and leads increased by over 120%. The SEO strategy was meticulous and results-driven.',
-        name: 'Emma Thompson',
-        role: 'Marketing Director, HealthPlus',
-      },
-      {
-        quote: 'Domain rating jumped from 4 to 29. We went from invisible to ranking on page one for our most competitive keywords.',
-        name: 'Dr. Alex Reed',
-        role: 'Founder, Scar Removal Clinic',
+        quote: 'Thanks for everything here. We really appreciate everything you\'ve done along the way. You certainly haven\'t heard the last from us.',
+        name: 'Sean Griffith',
+        role: 'Founder, Truffle',
       },
     ],
     results: [
@@ -58,7 +53,7 @@ const services = [
     tags: ['Content', 'PPC', 'Analytics'],
     featured: true,
     fullDescription:
-      'We connect your business goals to measurable growth. Starting with a deep look at your audience, competitive landscape, and current performance data, we identify the highest-impact opportunities and build a roadmap to capture them. We use AI-powered research tools to move faster and sharper than traditional strategy work allows. Every decision is backed by data, and every campaign is designed to compound over time. We work alongside your team to execute, measure, and iterate, not just hand you a document and walk away.',
+      'I connect your business goals to measurable growth. Starting with a deep look at your audience, competitive landscape, and current performance data, I identify the highest-impact opportunities and build a roadmap to capture them. I use AI-powered research tools to move faster and sharper than traditional strategy work allows. Every decision is backed by data, and every campaign is designed to compound over time. I work alongside your team to execute, measure, and iterate, not just hand you a document and walk away.',
     whatYouGet: [
       {
         title: 'Audience & Competitive Research',
@@ -74,20 +69,15 @@ const services = [
       },
       {
         title: 'Ongoing Execution & Iteration',
-        description: 'We stay in, measure what\'s working, and adjust. Strategy without execution is just a document.',
+        description: 'I stay in, measure what\'s working, and adjust. Strategy without execution is just a document.',
       },
     ],
     whatYouGetLabel: 'What\'s Included',
     testimonials: [
       {
-        quote: 'The marketing strategy transformed how we approach growth. PPC conversions increased 30% while cost per lead dropped significantly.',
-        name: 'James Chen',
-        role: 'Founder, Waltero',
-      },
-      {
-        quote: 'Finally a strategist who backs up every recommendation with data. Our ROI on marketing spend has never been higher.',
-        name: 'Sarah Mitchell',
-        role: 'CEO, TechStart',
+        quote: 'Oussama is one of the sharpest SEO and digital marketing minds I\'ve worked with. I learned more from him than from anyone else in the space.',
+        name: 'David Pawlan',
+        role: 'Co-founder, Aloa',
       },
     ],
     results: [
@@ -162,6 +152,7 @@ export default function Services() {
       <div className="container">
         <RevealOnScroll>
           <h2 className={styles.heading}>Three marketing services to serve all your needs</h2>
+
         </RevealOnScroll>
 
         <div className={styles.grid}>
