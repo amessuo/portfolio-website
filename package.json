@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run build --workspace=blog && cp -r blog/dist dist/blog",
+    "build": "vite build && npm run build --workspace=blog && cp -r blog/dist dist/blog && node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "dev:blog": "npm run dev --workspace=blog",
     "dev:studio": "npm run dev --workspace=studio",

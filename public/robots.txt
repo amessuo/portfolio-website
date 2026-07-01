@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.oussamabettaieb.com/sitemap.xml
-Sitemap: https://www.oussamabettaieb.com/blog/sitemap-index.xml
