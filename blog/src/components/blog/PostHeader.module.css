@@ -45,6 +45,10 @@
   grid-template-columns: 1fr;
   gap: var(--space-lg);
   align-items: center;
+  /* Sit above the later Key Takeaway sibling so the share dropdown,
+     which overflows downward, is not covered by it. */
+  position: relative;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
