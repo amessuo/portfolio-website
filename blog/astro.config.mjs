@@ -3,7 +3,7 @@ import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 
 export default defineConfig({
-  site: 'https://threedigital.io',
+  site: 'https://www.oussamabettaieb.com',
   base: '/blog',
   integrations: [react(), sitemap()],
   vite: {
