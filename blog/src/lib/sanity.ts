@@ -27,3 +27,12 @@ export function imageUrl(source: any, width = 1400): string | null {
   if (source.asset) return builder.image(source).width(width).url()
   return null
 }
+
+// Social-share (Open Graph / Twitter) image. Served as a compressed JPG
+// to stay under WhatsApp's ~300KB preview limit while keeping 1200px width.
+export function ogImageUrl(source: any): string | null {
+  if (!source) return null
+  if (typeof source === 'string') return source
+  if (source.asset) return builder.image(source).width(1200).format('jpg').quality(75).url()
+  return null
+}

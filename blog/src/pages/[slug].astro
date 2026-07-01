@@ -5,7 +5,7 @@ import AiSummary from '../components/blog/AiSummary.jsx'
 import TableOfContents from '../components/blog/TableOfContents.jsx'
 import PortableTextRenderer from '../components/blog/PortableTextRenderer.jsx'
 import RelatedArticles from '../components/blog/RelatedArticles.astro'
-import { client, isSanityConfigured } from '../lib/sanity.ts'
+import { client, isSanityConfigured, ogImageUrl } from '../lib/sanity.ts'
 import { postBySlugQuery, relatedPostsQuery } from '../lib/queries.ts'
 import { placeholderPostDetails, placeholderListPosts } from '../lib/placeholders.ts'
 
@@ -62,6 +62,7 @@ if (!post) {
   ogTitle={post.seoTitle || post.title}
   ogDescription={post.seoDescription || post.excerpt}
   ogType="article"
+  ogImage={ogImageUrl(post.mainImage)}
   publishedTime={post.publishedAt}
   author={post.author?.name}
 >
