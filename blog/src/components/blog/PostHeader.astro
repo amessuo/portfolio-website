@@ -1,0 +1,115 @@
+---
+import styles from './PostHeader.module.css'
+import ShareButtons from './ShareButtons.jsx'
+
+const { post } = Astro.props
+
+const date = post.publishedAt
+  ? new Date(post.publishedAt).toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+    })
+  : ''
+
+const categoryName = post.categories?.[0]?.title
+const heroSrc = typeof post.mainImage === 'string' ? post.mainImage : null
+const authorSrc = typeof post.author?.image === 'string' ? post.author.image : null
+
+// Build title with keyword accent
+function renderTitle(title, keyword) {
+  if (!keyword) return title
+  const idx = title.toLowerCase().indexOf(keyword.toLowerCase())
+  if (idx === -1) return title
+  const before = title.slice(0, idx)
+  const match = title.slice(idx, idx + keyword.length)
+  const after = title.slice(idx + keyword.length)
+  return { before, match, after }
+}
+
+const titleParts = post.primaryKeyword ? renderTitle(post.title, post.primaryKeyword) : null
+const takeawayText = post.keyTakeaway || post.excerpt
+---
+
+<header class={styles.header}>
+  <div class={styles.breadcrumb}>
+    <a href="/blog" class={styles.breadcrumbLink}>Blog</a>
+    <span class={styles.breadcrumbSep}>/</span>
+    {categoryName && (
+      <>
+        <span class={styles.breadcrumbText}>{categoryName}</span>
+        <span class={styles.breadcrumbSep}>/</span>
+      </>
+    )}
+    <span class={styles.breadcrumbCurrent}>{post.title}</span>
+  </div>
+
+  <div class={styles.heroGrid}>
+    <div data-reveal="fade-up">
+      <div class={styles.heroText}>
+        {categoryName && <span class={styles.category}>{categoryName}</span>}
+
+        <h1 class={styles.title}>
+          {titleParts
+            ? <Fragment>{titleParts.before}<em class={styles.accent}>{titleParts.match}</em>{titleParts.after}</Fragment>
+            : post.title
+          }
+        </h1>
+
+        <div class={styles.metaRow}>
+          {post.author && (
+            <div class={styles.authorInfo}>
+              {authorSrc && (
+                <img
+                  src={authorSrc}
+                  alt={post.author.name}
+                  width={40}
+                  height={40}
+                  class={styles.authorAvatar}
+                />
+              )}
+              <div class={styles.authorText}>
+                <span class={styles.authorName}>{post.author.name}</span>
+                {post.author.role && (
+                  <span class={styles.authorRole}>{post.author.role}</span>
+                )}
+              </div>
+            </div>
+          )}
+
+          <div class={styles.metaDetails}>
+            {date && <span class={styles.metaItem}>{date}</span>}
+            {post.estimatedReadingTime && (
+              <span class={styles.metaItem}>{post.estimatedReadingTime} min read</span>
+            )}
+          </div>
+
+          <ShareButtons client:visible title={post.title} />
+        </div>
+      </div>
+    </div>
+
+    {heroSrc && (
+      <div data-reveal="fade-right" data-reveal-delay="0.1">
+        <div class={styles.heroImage}>
+          <img
+            src={heroSrc}
+            alt={post.mainImage?.alt || post.title}
+            width={1400}
+            height={700}
+            class={styles.image}
+          />
+        </div>
+      </div>
+    )}
+  </div>
+
+  {takeawayText && (
+    <div data-reveal="fade-up" data-reveal-delay="0.2">
+      <div class={styles.takeaway}>
+        <span class={styles.takeawayLabel}>Key Takeaway</span>
+        <p class={styles.takeawayText}>{takeawayText}</p>
+      </div>
+    </div>
+  )}
+</header>

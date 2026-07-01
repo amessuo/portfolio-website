@@ -39,6 +39,7 @@ export default function Footer() {
           <h4 className={styles.colTitle}>Pages</h4>
           <button onClick={() => handleNavClick('about')} className={styles.footerLink}>About Us</button>
           <Link to="/case-studies" className={styles.footerLink}>Case Studies</Link>
+          <a href="/blog" className={styles.footerLink}>Blog</a>
           <button onClick={() => handleNavClick('contact')} className={styles.footerLink}>Contact Us</button>
         </div>
 

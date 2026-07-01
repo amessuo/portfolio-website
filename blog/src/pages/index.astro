@@ -1,0 +1,44 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro'
+import BlogHero from '../components/blog/BlogHero.astro'
+import BlogGrid from '../components/blog/BlogGrid.jsx'
+import { client, isSanityConfigured } from '../lib/sanity.ts'
+import { postsQuery, categoriesQuery } from '../lib/queries.ts'
+import { placeholderListPosts, placeholderCategories } from '../lib/placeholders.ts'
+
+let posts = placeholderListPosts
+let categories = placeholderCategories
+
+if (isSanityConfigured) {
+  try {
+    const [fetchedPosts, fetchedCategories] = await Promise.all([
+      client.fetch(postsQuery),
+      client.fetch(categoriesQuery),
+    ])
+    posts = fetchedPosts
+    categories = fetchedCategories
+  } catch {
+    // Fall back to placeholder data
+  }
+}
+
+const featuredPost = posts[0] || null
+---
+
+<BlogLayout>
+  <main class="page">
+    <div class="container">
+      <BlogHero featuredPost={featuredPost} />
+      <BlogGrid client:load posts={posts} categories={categories} excludeId={featuredPost?._id} />
+    </div>
+  </main>
+</BlogLayout>
+
+<style>
+  .page {
+    padding-top: calc(var(--nav-height) + var(--space-2xl));
+    padding-bottom: var(--space-3xl);
+    background-color: var(--warm-cream);
+    min-height: 100vh;
+  }
+</style>

@@ -1,0 +1,124 @@
+.wrapper {
+  margin-top: var(--space-sm);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* Trigger button */
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--white);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.trigger:hover {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+.triggerOpen {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.triggerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sparkle {
+  color: var(--lavender);
+  flex-shrink: 0;
+}
+
+.triggerLabel {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.chevron {
+  color: var(--mid-gray);
+  transition: transform var(--duration-fast) var(--ease-out-expo);
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Expanded panel */
+.panel {
+  overflow: hidden;
+}
+
+.panelInner {
+  padding: var(--space-md) 1rem var(--space-md);
+}
+
+.panelLabel {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 0.625rem;
+}
+
+.panelText {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--charcoal);
+  white-space: pre-line;
+}
+
+.disclaimer {
+  margin-top: var(--space-sm);
+  font-size: 0.75rem;
+  color: var(--mid-gray);
+  font-style: italic;
+}
+
+/* Sparkle animation during loading */
+.sparkleAnim {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* Skeleton loading lines */
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.skeletonLine {
+  height: 14px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.04) 25%,
+    rgba(0, 0, 0, 0.08) 50%,
+    rgba(0, 0, 0, 0.04) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

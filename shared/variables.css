@@ -1,0 +1,73 @@
+:root {
+  /* Brand Colors — Marketix Palette */
+  --black: #000000;
+  --charcoal: #141413;
+  --mint: #A9F7B8;
+  --lavender: #A9ADF9;
+
+  /* Section Background Pastels */
+  --soft-mint: #E5EEED;
+  --light-green: #DFF8EA;
+  --soft-yellow: #F2FAAC;
+  --soft-pink: #FDDDF8;
+  --soft-blue: #DBF3FF;
+  --warm-cream: #FAF9F5;
+  --pale-teal: #EDFBF9;
+
+  /* Neutrals */
+  --white: #FFFFFF;
+  --text-primary: #000000;
+  --text-secondary: #141413;
+  --mid-gray: #999999;
+
+  /* Semantic aliases (used across components) */
+  --maroon: #000000;
+  --maroon-dark: #141413;
+  --forest-green: #000000;
+  --forest-green-dark: #141413;
+  --violet: #A9ADF9;
+  --maroon-tint: #FDDDF8;
+  --green-tint: #DFF8EA;
+  --violet-tint: #DBF3FF;
+  --soft-maroon: #FDDDF8;
+  --soft-green: #A9F7B8;
+  --soft-violet: #A9ADF9;
+
+  /* Backward-compat aliases */
+  --accent: var(--mint);
+  --accent-hover: #8DE8A0;
+  --ink: var(--black);
+  --off-white: var(--warm-cream);
+  --light-gray: var(--soft-mint);
+
+  /* Typography */
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Karla', system-ui, sans-serif;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 10rem;
+
+  /* Layout */
+  --container-max: 1400px;
+  --container-padding: clamp(1.5rem, 4vw, 6rem);
+  --nav-height: 80px;
+
+  /* Timing */
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --duration-fast: 0.3s;
+  --duration-normal: 0.5s;
+  --duration-slow: 0.8s;
+
+  /* Borders */
+  --border-light: 1px solid var(--mid-gray);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}

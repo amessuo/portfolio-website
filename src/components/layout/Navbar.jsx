@@ -38,28 +38,31 @@ export default function Navbar() {
   }
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      <nav className={`${styles.nav} container`}>
-        <Link to="/" className={styles.logo}>
-          <span className={styles.logoCircle}>
-            <img src="/logo.png" alt="ThreeDigital" className={styles.logoImg} />
-          </span>
-        </Link>
+    <>
+      <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+        <nav className={`${styles.nav} container`}>
+          <Link to="/" className={styles.logo}>
+            <span className={styles.logoCircle}>
+              <img src="/logo.png" alt="ThreeDigital" className={styles.logoImg} />
+            </span>
+          </Link>
 
-        <div className={styles.links}>
-          <Link to="/case-studies" className={styles.link}>Case Studies</Link>
-          <button onClick={() => handleNavClick('contact')} className={styles.link}>Contact</button>
-        </div>
+          <div className={styles.links}>
+            <Link to="/case-studies" className={styles.link}>Case Studies</Link>
+            <a href="/blog" className={styles.link}>Blog</a>
+            <button onClick={() => handleNavClick('contact')} className={styles.link}>Contact</button>
+          </div>
 
-        <button
-          className={`${styles.burger} ${isOpen ? styles.burgerOpen : ''}`}
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-        >
-          <span />
-          <span />
-        </button>
-      </nav>
+          <button
+            className={`${styles.burger} ${isOpen ? styles.burgerOpen : ''}`}
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          >
+            <span />
+            <span />
+          </button>
+        </nav>
+      </header>
 
       <AnimatePresence>
         {isOpen && (
@@ -70,6 +73,14 @@ export default function Navbar() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
+            <button
+              className={`${styles.burger} ${styles.burgerOpen} ${styles.mobileClose}`}
+              onClick={() => setIsOpen(false)}
+              aria-label="Close menu"
+            >
+              <span />
+              <span />
+            </button>
             <div className={styles.mobileLinks}>
               {[
                 { label: 'Contact', id: 'contact' },
@@ -90,14 +101,23 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.22, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
-                <Link to="/case-studies" className={styles.mobileLink}>
+                <Link to="/case-studies" className={styles.mobileLink} onClick={() => setIsOpen(false)}>
                   Case Studies
                 </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.28, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <a href="/blog" className={styles.mobileLink}>
+                  Blog
+                </a>
               </motion.div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   )
 }

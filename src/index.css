@@ -1,6 +1,6 @@
-@import './styles/reset.css';
-@import './styles/variables.css';
-@import './styles/typography.css';
+@import '../shared/reset.css';
+@import '../shared/variables.css';
+@import '../shared/typography.css';
 
 #root {
   min-height: 100vh;

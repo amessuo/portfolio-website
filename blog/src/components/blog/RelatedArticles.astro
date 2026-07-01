@@ -1,0 +1,63 @@
+---
+import styles from './RelatedArticles.module.css'
+import cardStyles from './BlogCard.module.css'
+
+const { posts } = Astro.props
+
+if (!posts?.length) return
+
+const categoryColors = {
+  seo: 'var(--mint)',
+  'ai-in-marketing': 'var(--lavender)',
+}
+---
+
+<section class={styles.section}>
+  <div data-reveal="fade-up">
+    <span class={styles.label}>Related</span>
+    <h2 class={styles.title}>More articles you might like</h2>
+  </div>
+  <div class={styles.grid}>
+    {posts.map((post, i) => {
+      const date = post.publishedAt
+        ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+        : ''
+      const categoryName = post.categories?.[0]?.title
+      const categorySlug = post.categories?.[0]?.slug?.current
+      const accentColor = categoryColors[categorySlug] || 'rgba(0, 0, 0, 0.06)'
+      const imageSrc = typeof post.mainImage === 'string' ? post.mainImage : null
+      const authorSrc = typeof post.author?.image === 'string' ? post.author.image : null
+
+      return (
+        <div data-reveal="fade-up" data-reveal-delay={String(i * 0.08)}>
+          <article class={cardStyles.card} style={`--card-accent: ${accentColor}`}>
+            <a href={`/blog/${post.slug.current}`} class={cardStyles.cardLink}>
+              {imageSrc && (
+                <div class={cardStyles.imageWrap}>
+                  <img src={imageSrc} alt={post.title} width={800} height={450} class={cardStyles.image} />
+                </div>
+              )}
+              <div class={cardStyles.content}>
+                <div class={cardStyles.meta}>
+                  {categoryName && <span class={cardStyles.category}>{categoryName}</span>}
+                  {date && <span class={cardStyles.date}>{date}</span>}
+                </div>
+                <h3 class={cardStyles.title}>{post.title}</h3>
+                {post.excerpt && <p class={cardStyles.excerpt}>{post.excerpt}</p>}
+                <div class={cardStyles.footer}>
+                  {post.author && (
+                    <div class={cardStyles.author}>
+                      {authorSrc && <img src={authorSrc} alt={post.author.name} width={28} height={28} class={cardStyles.authorAvatar} />}
+                      <span class={cardStyles.authorName}>{post.author.name}</span>
+                    </div>
+                  )}
+                  <span class={cardStyles.cta}>Read more <span class={cardStyles.ctaArrow}>&rarr;</span></span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      )
+    })}
+  </div>
+</section>

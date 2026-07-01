@@ -1,0 +1,52 @@
+.searchBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  color: var(--mid-gray);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.input::placeholder {
+  color: var(--mid-gray);
+}
+
+.input:focus {
+  border-color: var(--black);
+}
+
+.clearBtn {
+  position: absolute;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: var(--mid-gray);
+  transition: color var(--duration-fast) ease;
+}
+
+.clearBtn:hover {
+  color: var(--black);
+}

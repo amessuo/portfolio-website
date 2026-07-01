@@ -1,0 +1,130 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro'
+import PostHeader from '../components/blog/PostHeader.astro'
+import AiSummary from '../components/blog/AiSummary.jsx'
+import TableOfContents from '../components/blog/TableOfContents.jsx'
+import PortableTextRenderer from '../components/blog/PortableTextRenderer.jsx'
+import RelatedArticles from '../components/blog/RelatedArticles.astro'
+import { client, isSanityConfigured } from '../lib/sanity.ts'
+import { postBySlugQuery, relatedPostsQuery } from '../lib/queries.ts'
+import { placeholderPostDetails, placeholderListPosts } from '../lib/placeholders.ts'
+
+export async function getStaticPaths() {
+  const placeholderPaths = Object.keys(placeholderPostDetails).map((slug) => ({ params: { slug } }))
+
+  if (isSanityConfigured) {
+    try {
+      const posts = await client.fetch(`*[_type == "post" && defined(slug.current)]{ "slug": slug.current }`)
+      if (posts?.length) {
+        const sanityPaths = posts.map((p: any) => ({ params: { slug: p.slug } }))
+        // Merge: Sanity posts + placeholder posts (deduped)
+        const allSlugs = new Set(sanityPaths.map((p: any) => p.params.slug))
+        const merged = [...sanityPaths]
+        for (const p of placeholderPaths) {
+          if (!allSlugs.has(p.params.slug)) merged.push(p)
+        }
+        return merged
+      }
+    } catch {}
+  }
+
+  return placeholderPaths
+}
+
+const { slug } = Astro.params
+let post = null
+let relatedPosts: any[] = []
+
+if (isSanityConfigured) {
+  try {
+    post = await client.fetch(postBySlugQuery, { slug })
+    if (post) {
+      const categoryIds = post.categories?.map((c: any) => c._id) || []
+      if (categoryIds.length) {
+        relatedPosts = await client.fetch(relatedPostsQuery, { slug, categoryIds })
+      }
+    }
+  } catch {}
+}
+
+if (!post) {
+  post = placeholderPostDetails[slug as string]
+}
+
+if (!post) {
+  return Astro.redirect('/blog')
+}
+---
+
+<BlogLayout
+  title={`${post.seoTitle || post.title} | ThreeDigital Blog`}
+  description={post.seoDescription || post.excerpt}
+  ogTitle={post.seoTitle || post.title}
+  ogDescription={post.seoDescription || post.excerpt}
+  ogType="article"
+  publishedTime={post.publishedAt}
+  author={post.author?.name}
+>
+  <main class="page">
+    <div class="reading-progress"><div class="reading-progress-fill"></div></div>
+    <div class="container">
+      <PostHeader post={post} />
+      <AiSummary client:visible summary={post.aiSummary} />
+
+      <div class="content-grid">
+        <aside class="sidebar">
+          <TableOfContents client:visible headings={post.headings} />
+        </aside>
+        <article class="article">
+          <PortableTextRenderer content={post.body} />
+        </article>
+      </div>
+
+      {relatedPosts.length > 0 && <RelatedArticles posts={relatedPosts} />}
+    </div>
+  </main>
+  <script src="../components/scripts/reading-progress.js"></script>
+</BlogLayout>
+
+<style>
+  .page {
+    padding-top: calc(var(--nav-height) + var(--space-xl));
+    padding-bottom: var(--space-3xl);
+    background-color: var(--white);
+    min-height: 100vh;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+  }
+
+  @media (min-width: 1024px) {
+    .content-grid {
+      grid-template-columns: 220px 1fr;
+      gap: var(--space-2xl);
+    }
+  }
+
+  .sidebar {
+    order: 2;
+  }
+
+  @media (min-width: 1024px) {
+    .sidebar {
+      order: 1;
+    }
+  }
+
+  .article {
+    order: 1;
+  }
+
+  @media (min-width: 1024px) {
+    .article {
+      order: 2;
+    }
+  }
+</style>

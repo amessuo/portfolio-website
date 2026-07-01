@@ -3,10 +3,17 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "workspaces": [
+    "blog",
+    "studio"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:blog": "npm run dev --workspace=blog",
+    "dev:studio": "npm run dev --workspace=studio",
+    "build:blog": "npm run build --workspace=blog"
   },
   "dependencies": {
     "react": "^18.3.1",

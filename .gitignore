@@ -1,10 +1,21 @@
 node_modules/
 dist/
 .DS_Store
+.astro/
+.env
+.env.local
+
+# Backups
+blog-nextjs/
 
 # Local docs (not part of the codebase)
 *.pdf
 Marketix_Brand_Guideline.md
 ThreeDigital_Brand_Guideline.md
-"Three Digital Favicon .png"
-"Three Digital Logo.png"
+Three\ Digital\ Favicon\ .png
+Three\ Digital\ Logo.png
+1745237271234.jpeg
+case-study-collector.skill
+CONTEXT.md
+.claude/launch.json
+studio/.sanity/

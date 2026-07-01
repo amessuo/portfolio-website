@@ -1,0 +1,64 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  margin-top: var(--space-xl);
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.page:hover {
+  border-color: var(--black);
+  color: var(--black);
+}
+
+.active {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+.active:hover {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--charcoal);
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.arrow:hover:not(:disabled) {
+  border-color: var(--black);
+  color: var(--black);
+}
+
+.arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

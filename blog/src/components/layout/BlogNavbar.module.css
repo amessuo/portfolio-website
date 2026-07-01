@@ -74,13 +74,14 @@
   color: var(--charcoal);
   letter-spacing: 0.02em;
   transition: color var(--duration-fast) ease;
-  background: none;
-  border: none;
-  cursor: pointer;
   text-decoration: none;
 }
 
 .link:hover {
+  color: var(--black);
+}
+
+.linkActive {
   color: var(--black);
 }
 
@@ -94,7 +95,6 @@
   z-index: 110;
   background: none;
   border: none;
-  padding: 0;
 }
 
 @media (min-width: 768px) {
@@ -153,11 +153,8 @@
   font-size: 2.5rem;
   font-weight: 600;
   color: var(--black);
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: color var(--duration-fast) ease;
   text-decoration: none;
+  transition: color var(--duration-fast) ease;
 }
 
 .mobileLink:hover {

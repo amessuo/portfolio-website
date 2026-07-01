@@ -1,0 +1,85 @@
+---
+import styles from './BlogHero.module.css'
+
+const { featuredPost } = Astro.props
+
+const date = featuredPost?.publishedAt
+  ? new Date(featuredPost.publishedAt).toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+    })
+  : ''
+
+const categoryName = featuredPost?.categories?.[0]?.title
+const imageSrc = typeof featuredPost?.mainImage === 'string' ? featuredPost.mainImage : null
+const authorSrc = typeof featuredPost?.author?.image === 'string' ? featuredPost.author.image : null
+---
+
+<div class={styles.hero}>
+  <div data-reveal="fade-up">
+    <span class={styles.label}>Blog</span>
+  </div>
+
+  <div class={styles.heroGrid}>
+    <div data-reveal="fade-up" data-reveal-delay="0.05">
+      <div class={styles.heroText}>
+        <h1 class={styles.title}>
+          Insights on SEO, AI, and{' '}
+          <em class={styles.accent}>growth</em>.
+        </h1>
+        <p class={styles.subtitle}>
+          Practical strategies and deep dives into the tools, tactics, and thinking
+          behind sustainable organic growth for B2B businesses.
+        </p>
+      </div>
+    </div>
+
+    {featuredPost && (
+      <div data-reveal="fade-right" data-reveal-delay="0.15">
+        <a href={`/blog/${featuredPost.slug.current}`} class={styles.featuredCard}>
+          {imageSrc && (
+            <div class={styles.featuredImageWrap}>
+              <img
+                src={imageSrc}
+                alt={featuredPost.mainImage?.alt || featuredPost.title}
+                width={800}
+                height={450}
+                class={styles.featuredImage}
+              />
+            </div>
+          )}
+          <div class={styles.featuredContent}>
+            <div class={styles.featuredMeta}>
+              {categoryName && <span class={styles.featuredCategory}>{categoryName}</span>}
+              {date && <span class={styles.featuredDate}>{date}</span>}
+            </div>
+            <h2 class={styles.featuredTitle}>{featuredPost.title}</h2>
+            {featuredPost.excerpt && (
+              <p class={styles.featuredExcerpt}>{featuredPost.excerpt}</p>
+            )}
+            <div class={styles.featuredFooter}>
+              {featuredPost.author && (
+                <div class={styles.featuredAuthor}>
+                  {authorSrc && (
+                    <img
+                      src={authorSrc}
+                      alt={featuredPost.author.name}
+                      width={28}
+                      height={28}
+                      class={styles.featuredAvatar}
+                    />
+                  )}
+                  <span class={styles.featuredAuthorName}>{featuredPost.author.name}</span>
+                </div>
+              )}
+              {featuredPost.estimatedReadingTime && (
+                <span class={styles.featuredReadTime}>{featuredPost.estimatedReadingTime} min read</span>
+              )}
+            </div>
+          </div>
+        </a>
+      </div>
+    )}
+  </div>
+</div>
