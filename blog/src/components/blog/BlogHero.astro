@@ -1,5 +1,6 @@
 ---
 import styles from './BlogHero.module.css'
+import { imageUrl } from '../../lib/sanity.ts'
 
 const { featuredPost } = Astro.props
 
@@ -12,8 +13,8 @@ const date = featuredPost?.publishedAt
   : ''
 
 const categoryName = featuredPost?.categories?.[0]?.title
-const imageSrc = typeof featuredPost?.mainImage === 'string' ? featuredPost.mainImage : null
-const authorSrc = typeof featuredPost?.author?.image === 'string' ? featuredPost.author.image : null
+const imageSrc = imageUrl(featuredPost?.mainImage, 800)
+const authorSrc = imageUrl(featuredPost?.author?.image, 56)
 ---
 
 <div class={styles.hero}>

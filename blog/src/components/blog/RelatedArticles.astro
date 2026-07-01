@@ -1,6 +1,7 @@
 ---
 import styles from './RelatedArticles.module.css'
 import cardStyles from './BlogCard.module.css'
+import { imageUrl } from '../../lib/sanity.ts'
 
 const { posts } = Astro.props
 
@@ -25,8 +26,8 @@ const categoryColors = {
       const categoryName = post.categories?.[0]?.title
       const categorySlug = post.categories?.[0]?.slug?.current
       const accentColor = categoryColors[categorySlug] || 'rgba(0, 0, 0, 0.06)'
-      const imageSrc = typeof post.mainImage === 'string' ? post.mainImage : null
-      const authorSrc = typeof post.author?.image === 'string' ? post.author.image : null
+      const imageSrc = imageUrl(post.mainImage, 800)
+      const authorSrc = imageUrl(post.author?.image, 56)
 
       return (
         <div data-reveal="fade-up" data-reveal-delay={String(i * 0.08)}>

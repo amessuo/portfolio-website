@@ -1,6 +1,7 @@
 ---
 import styles from './PostHeader.module.css'
 import ShareButtons from './ShareButtons.jsx'
+import { imageUrl } from '../../lib/sanity.ts'
 
 const { post } = Astro.props
 
@@ -13,8 +14,8 @@ const date = post.publishedAt
   : ''
 
 const categoryName = post.categories?.[0]?.title
-const heroSrc = typeof post.mainImage === 'string' ? post.mainImage : null
-const authorSrc = typeof post.author?.image === 'string' ? post.author.image : null
+const heroSrc = imageUrl(post.mainImage, 1400)
+const authorSrc = imageUrl(post.author?.image, 80)
 
 // Build title with keyword accent
 function renderTitle(title, keyword) {

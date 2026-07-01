@@ -18,3 +18,12 @@ const builder = imageUrlBuilder(client)
 export function urlFor(source: any) {
   return builder.image(source)
 }
+
+// Resolve a cover/avatar field to a URL string. Accepts either a plain
+// string URL (legacy/placeholder data) or a Sanity image object.
+export function imageUrl(source: any, width = 1400): string | null {
+  if (!source) return null
+  if (typeof source === 'string') return source
+  if (source.asset) return builder.image(source).width(width).url()
+  return null
+}

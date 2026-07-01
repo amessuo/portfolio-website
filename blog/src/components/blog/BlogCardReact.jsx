@@ -1,10 +1,5 @@
 import styles from './BlogCard.module.css'
-
-function getImageSrc(image) {
-  if (!image) return null
-  if (typeof image === 'string') return image
-  return null
-}
+import { imageUrl } from '../../lib/sanity.ts'
 
 const categoryColors = {
   seo: 'var(--mint)',
@@ -23,8 +18,8 @@ export default function BlogCardReact({ post, basePath = '/blog' }) {
   const categoryName = post.categories?.[0]?.title
   const categorySlug = post.categories?.[0]?.slug?.current
   const accentColor = categoryColors[categorySlug] || 'rgba(0, 0, 0, 0.06)'
-  const imageSrc = getImageSrc(post.mainImage)
-  const authorSrc = getImageSrc(post.author?.image)
+  const imageSrc = imageUrl(post.mainImage, 800)
+  const authorSrc = imageUrl(post.author?.image, 56)
 
   return (
     <article className={styles.card} style={{ '--card-accent': accentColor }}>
