@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run build --workspace=blog && cp -r blog/dist dist/blog",
     "preview": "vite preview",
     "dev:blog": "npm run dev --workspace=blog",
     "dev:studio": "npm run dev --workspace=studio",
