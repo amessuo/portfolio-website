@@ -1,6 +1,8 @@
 .wrap {
   margin-top: var(--space-2xl);
   margin-bottom: var(--space-lg);
+  /* offset the anchor jump so the card clears the fixed navbar */
+  scroll-margin-top: calc(var(--nav-height) + var(--space-md));
 }
 
 .card {

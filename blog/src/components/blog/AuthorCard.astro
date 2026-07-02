@@ -7,7 +7,7 @@ const avatar = imageUrl(author?.image, 220)
 ---
 
 {author && (
-  <section class={styles.wrap} data-reveal="fade-up">
+  <section id="about-the-author" class={styles.wrap} data-reveal="fade-up">
     <div class={styles.card}>
       {avatar && (
         <a href={href} class={styles.avatarLink} aria-label={author.name}>
