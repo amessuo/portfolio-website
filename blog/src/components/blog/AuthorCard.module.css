@@ -1,0 +1,132 @@
+.wrap {
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-lg);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  background: linear-gradient(135deg, var(--warm-cream) 0%, var(--pale-teal) 100%);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* mint accent bar along the top edge */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: var(--mint);
+}
+
+/* Avatar with an offset lavender panel behind for depth */
+.avatarLink {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  width: 110px;
+  height: 110px;
+}
+
+.avatarLink::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translate(10px, 10px);
+  background: var(--lavender);
+  border-radius: 22px;
+  z-index: 0;
+}
+
+.avatar {
+  position: relative;
+  z-index: 1;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--white);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.09);
+  transition: transform var(--duration-fast) var(--ease-out-expo);
+}
+
+.avatarLink:hover .avatar {
+  transform: translateY(-3px);
+}
+
+.body {
+  min-width: 0;
+  padding-top: 0.25rem;
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 0.65rem;
+}
+
+.nameRow {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--black);
+  text-decoration: none;
+  /* animated mint underline on hover, matching the site accent */
+  background-image: linear-gradient(var(--mint), var(--mint));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 0.22em;
+  transition: background-size var(--duration-normal) var(--ease-out-expo);
+}
+
+.name:hover {
+  background-size: 100% 0.22em;
+}
+
+.role {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--mid-gray);
+}
+
+.role::before {
+  content: '·';
+  margin-right: 0.55rem;
+  color: var(--mid-gray);
+}
+
+.bio {
+  margin-top: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--charcoal);
+  max-width: 62ch;
+}
+
+@media (max-width: 640px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+}

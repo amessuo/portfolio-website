@@ -1,0 +1,34 @@
+---
+import styles from './AuthorCard.module.css'
+import { imageUrl } from '../../lib/sanity.ts'
+
+const { author, href = '/' } = Astro.props
+const avatar = imageUrl(author?.image, 220)
+---
+
+{author && (
+  <section class={styles.wrap} data-reveal="fade-up">
+    <div class={styles.card}>
+      {avatar && (
+        <a href={href} class={styles.avatarLink} aria-label={author.name}>
+          <img
+            class={styles.avatar}
+            src={avatar}
+            alt={author.name}
+            width="110"
+            height="110"
+            loading="lazy"
+          />
+        </a>
+      )}
+      <div class={styles.body}>
+        <span class={styles.eyebrow}>About the author</span>
+        <div class={styles.nameRow}>
+          <a href={href} class={styles.name}>{author.name}</a>
+          {author.role && <span class={styles.role}>{author.role}</span>}
+        </div>
+        {author.bio && <p class={styles.bio}>{author.bio}</p>}
+      </div>
+    </div>
+  </section>
+)}

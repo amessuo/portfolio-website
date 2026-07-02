@@ -5,6 +5,7 @@ import AiSummary from '../components/blog/AiSummary.jsx'
 import TableOfContents from '../components/blog/TableOfContents.jsx'
 import PortableTextRenderer from '../components/blog/PortableTextRenderer.jsx'
 import RelatedArticles from '../components/blog/RelatedArticles.astro'
+import AuthorCard from '../components/blog/AuthorCard.astro'
 import { client, isSanityConfigured, ogImageUrl } from '../lib/sanity.ts'
 import { postBySlugQuery, relatedPostsQuery } from '../lib/queries.ts'
 import { placeholderPostDetails, placeholderListPosts } from '../lib/placeholders.ts'
@@ -80,6 +81,8 @@ if (!post) {
           <PortableTextRenderer content={post.body} />
         </article>
       </div>
+
+      {post.author && <AuthorCard author={post.author} />}
 
       {relatedPosts.length > 0 && <RelatedArticles posts={relatedPosts} />}
     </div>

@@ -59,7 +59,7 @@ const takeawayText = post.keyTakeaway || post.excerpt
 
         <div class={styles.metaRow}>
           {post.author && (
-            <div class={styles.authorInfo}>
+            <a href="/" class={styles.authorInfo}>
               {authorSrc && (
                 <img
                   src={authorSrc}
@@ -75,7 +75,7 @@ const takeawayText = post.keyTakeaway || post.excerpt
                   <span class={styles.authorRole}>{post.author.role}</span>
                 )}
               </div>
-            </div>
+            </a>
           )}
 
           <div class={styles.metaDetails}>
