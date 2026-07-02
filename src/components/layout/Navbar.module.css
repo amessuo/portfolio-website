@@ -134,11 +134,10 @@
 .mobileClose {
   position: absolute;
   top: 0;
-  right: 0;
+  right: var(--container-padding);
   height: var(--nav-height);
-  display: flex;
-  align-items: center;
-  padding-right: var(--space-lg);
+  width: 28px;
+  justify-content: center;
 }
 
 .mobileLinks {

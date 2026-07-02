@@ -51,6 +51,19 @@
   z-index: 2;
 }
 
+/* On mobile the cover image stacks directly below the text column; keep the
+   text column (and its share dropdown) above the image so the dropdown is
+   not hidden behind the cover. */
+.heroGrid > *:first-child {
+  position: relative;
+  z-index: 2;
+}
+
+.heroGrid > *:nth-child(2) {
+  position: relative;
+  z-index: 1;
+}
+
 @media (min-width: 768px) {
   .heroGrid {
     grid-template-columns: 1fr 1fr;
