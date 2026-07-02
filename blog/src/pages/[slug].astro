@@ -57,7 +57,7 @@ if (!post) {
 ---
 
 <BlogLayout
-  title={`${post.seoTitle || post.title} | ThreeDigital Blog`}
+  title={post.seoTitle || post.title}
   description={post.seoDescription || post.excerpt}
   ogTitle={post.seoTitle || post.title}
   ogDescription={post.seoDescription || post.excerpt}
